@@ -294,7 +294,7 @@ export default function CountrySelector({
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between text-muted-foreground"
+            className="w-full justify-between text-muted-fg bg-surface-1 border-subtle"
           >
             {value
               ? countries.find((country) => country.value === value)?.label
@@ -302,7 +302,7 @@ export default function CountrySelector({
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[200px] p-0">
+        <PopoverContent className="w-[200px] p-0 bg-surface-2 text-fg border-subtle">
           <Command>
             <CommandInput placeholder="Search country..." />
             <CommandList>

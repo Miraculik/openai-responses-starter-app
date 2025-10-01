@@ -113,3 +113,43 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* --- Dark theme tokens and helper utilities (minimal-change) --- */
+/* Color tokens approximated from reference screenshot */
+:root {
+  --color-bg: #0E1116;
+  --color-sidebar: #0B0F14;
+  --color-surface-1: #151922;
+  --color-surface-2: #1B2030;
+  --color-bubble-user: #363d4d;
+  --color-bubble-assistant: #161B26;
+  --color-border: #273142;
+  --color-fg: #E7EAF0;
+  --color-muted: #A4AABD;
+  --color-subtle: #8C93A5;
+  --color-accent: #10A37F;
+  --color-accent-600: #0D876A;
+  --color-link: #8AB4F8;
+  --color-code-bg: #0F1720;
+  --color-code-border: #1F2A37;
+  --color-input: #232A3B;
+}
+
+/* Semantic helpers to avoid large refactors */
+.bg-app-bg { background-color: var(--color-bg); }
+.bg-sidebar { background-color: var(--color-sidebar); }
+.bg-surface-1 { background-color: var(--color-surface-1); }
+.bg-surface-2 { background-color: var(--color-surface-2); }
+.bg-bubble-user { background-color: var(--color-bubble-user); }
+.bg-bubble-assistant { background-color: var(--color-bubble-assistant); }
+.text-fg { color: var(--color-fg); }
+.text-muted-fg { color: var(--color-muted); }
+.text-subtle-fg { color: var(--color-subtle); }
+.text-accent { color: var(--color-accent); }
+.border-subtle { border-color: var(--color-border); }
+.accent-bg { background-color: var(--color-accent); }
+.accent-bg:hover { background-color: var(--color-accent-600); }
+.ring-accent { --tw-ring-color: var(--color-accent); }
+.link { color: var(--color-link); }
+.code-surface { background-color: var(--color-code-bg); border-color: var(--color-code-border); }
+.bg-input { background-color: var(--color-input); }

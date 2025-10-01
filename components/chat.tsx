@@ -49,8 +49,8 @@ const Chat: React.FC<ChatProps> = ({
   return (
     <div className="flex justify-center items-center size-full">
       <div className="flex grow flex-col h-full max-w-[750px] gap-2">
-        <div className="h-[90vh] overflow-y-scroll px-10 flex flex-col">
-          <div className="mt-auto space-y-5 pt-4">
+        <div className="h-[90vh] overflow-y-scroll px-8 md:px-10 flex flex-col">
+          <div className="mt-auto space-y-4 md:space-y-5 pt-3 md:pt-4">
             {items.map((item, index) => (
               <React.Fragment key={index}>
                 {item.type === "tool_call" ? (
@@ -83,8 +83,8 @@ const Chat: React.FC<ChatProps> = ({
         <div className="flex-1 p-4 px-10">
           <div className="flex items-center">
             <div className="flex w-full items-center pb-4 md:pb-1">
-              <div className="flex w-full flex-col gap-1.5 rounded-[20px] p-2.5 pl-1.5 transition-colors bg-white border border-stone-200 shadow-sm">
-                <div className="flex items-end gap-1.5 md:gap-2 pl-4">
+              <div className="flex w-full flex-col gap-2 rounded-[20px] p-3 pl-2 transition-colors bg-input border border-subtle shadow-sm">
+                <div className="flex items-end gap-2 md:gap-3 pl-4">
                   <div className="flex min-w-0 flex-1 flex-col">
                     <textarea
                       id="prompt-textarea"
@@ -92,7 +92,7 @@ const Chat: React.FC<ChatProps> = ({
                       dir="auto"
                       rows={2}
                       placeholder="Message..."
-                      className="mb-2 resize-none border-0 focus:outline-none text-sm bg-transparent px-0 pb-6 pt-2"
+                      className="mb-1 resize-none border-0 focus:outline-none text-[15px] leading-6 bg-transparent px-0 pb-6 pt-2 text-fg placeholder:text-muted-fg"
                       value={inputMessageText}
                       onChange={(e) => setinputMessageText(e.target.value)}
                       onKeyDown={handleKeyDown}
@@ -103,7 +103,7 @@ const Chat: React.FC<ChatProps> = ({
                   <button
                     disabled={!inputMessageText}
                     data-testid="send-button"
-                    className="flex size-8 items-end justify-center rounded-full bg-black text-white transition-colors hover:opacity-70 focus-visible:outline-none focus-visible:outline-black disabled:bg-[#D7D7D7] disabled:text-[#f4f4f4] disabled:hover:opacity-100"
+                    className="flex size-9 items-center justify-center rounded-full accent-bg text-white transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 ring-accent disabled:bg-[#3a3a3a] disabled:text-[#9a9a9a] disabled:hover:opacity-100"
                   onClick={() => {
                       onSendMessage(inputMessageText);
                       setinputMessageText("");

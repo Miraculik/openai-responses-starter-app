@@ -174,7 +174,7 @@ export default function FileUpload({
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
       <DialogTrigger asChild>
-        <div className="bg-white rounded-full flex items-center justify-center py-1 px-3 border border-zinc-200 gap-1 font-medium text-sm cursor-pointer hover:bg-zinc-50 transition-all">
+        <div className="bg-surface-1 text-fg rounded-full flex items-center justify-center py-1 px-3 border border-subtle gap-1 font-medium text-sm cursor-pointer hover:bg-surface-2 transition-all">
           <Plus size={16} />
           Upload
         </div>
@@ -198,7 +198,7 @@ export default function FileUpload({
                   type="text"
                   value={newStoreName}
                   onChange={(e) => setNewStoreName(e.target.value)}
-                  className="border rounded p-2"
+                  className="border-subtle bg-surface-1 text-fg placeholder:text-muted-fg rounded p-2"
                 />
               </div>
             ) : (
@@ -207,7 +207,7 @@ export default function FileUpload({
                   <div className="text-sm font-medium w-24 text-nowrap">
                     Vector store
                   </div>
-                  <div className="text-zinc-400  text-xs font-mono flex-1 text-ellipsis truncate">
+                  <div className="text-subtle-fg  text-xs font-mono flex-1 text-ellipsis truncate">
                     {vectorStoreId}
                   </div>
                   <TooltipProvider>
@@ -216,7 +216,7 @@ export default function FileUpload({
                         <CircleX
                           onClick={() => onUnlinkStore()}
                           size={16}
-                          className="cursor-pointer text-zinc-400 mb-0.5 shrink-0 mt-0.5 hover:text-zinc-700 transition-all"
+                          className="cursor-pointer text-subtle-fg mb-0.5 shrink-0 mt-0.5 hover:text-muted-fg transition-all"
                         />
                       </TooltipTrigger>
                       <TooltipContent>
@@ -231,14 +231,14 @@ export default function FileUpload({
           <div className="flex justify-center items-center mb-4 h-[200px]">
             {file ? (
               <div className="flex flex-col items-start">
-                <div className="text-zinc-400">Loaded file</div>
+                <div className="text-subtle-fg">Loaded file</div>
                 <div className="flex items-center mt-2">
-                  <div className="text-zinc-900 mr-2">{file.name}</div>
+                  <div className="text-fg mr-2">{file.name}</div>
 
                   <Trash2
                     onClick={removeFile}
                     size={16}
-                    className="cursor-pointer text-zinc-900"
+                    className="cursor-pointer text-fg"
                   />
                 </div>
               </div>
@@ -252,13 +252,13 @@ export default function FileUpload({
                   <div
                     className={`absolute rounded-full transition-all duration-300 ${
                       isDragActive
-                        ? "h-56 w-56 bg-zinc-100"
+                        ? "h-56 w-56 bg-surface-2"
                         : "h-0 w-0 bg-transparent"
                     }`}
                   ></div>
                   <div className="flex flex-col items-center text-center z-10 cursor-pointer">
-                    <FilePlus2 className="mb-4 size-8 text-zinc-700" />
-                    <div className="text-zinc-700">Upload a file</div>
+                    <FilePlus2 className="mb-4 size-8 text-muted-fg" />
+                    <div className="text-muted-fg">Upload a file</div>
                   </div>
                 </div>
               </div>
